@@ -49,8 +49,9 @@ function updateForm() {
         propertiesDiv.innerHTML = ''; // Очищаем контейнер свойств
     } else if (selectedType === 'type3') {
         optionsDiv.innerHTML = ''; // Очищаем контейнер опций
+        // Генерируем чекбоксы для свойств
         propertiesDiv.innerHTML = `
-            ${propertiesType3.map(property => ` // Генерируем чекбоксы для свойств
+            ${propertiesType3.map(property => ` 
                 <label>
                     <input type="checkbox" onchange="calculateCost()" value="${property.name}"> ${property.name} (+${property.price} руб.)
                 </label>
