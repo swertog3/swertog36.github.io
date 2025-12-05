@@ -1,189 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 25.2.5.2 (Linux)"/>
-	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="00:00:00"/>
-	<style type="text/css">
-		@page { size: 8.5in 11in; margin: 0.79in }
-		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
-		pre { background: transparent }
-		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
-		pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }
-		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
-	</style>
+    <meta charset="UTF-8">
+    <title>Калькулятор стоимости</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre class="western">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;ru&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Сайт&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;header&gt;
-        &lt;div class=&quot;header-container&quot;&gt;
-            &lt;div class=&quot;header-content&quot;&gt;
-                &lt;div class=&quot;logo-wrapper&quot;&gt;
-                    &lt;div class=&quot;logo&quot;&gt;
-                        &lt;img src=&quot;https://avatars.mds.yandex.net/i?id=c773ca51a07233f2e45f62a11746d96e_l-4359636-images-thumbs&amp;n=13&quot; alt=&quot;Логотип&quot;&gt;
-                    &lt;/div&gt;
-                    &lt;div class=&quot;title-container&quot;&gt;
-                        &lt;h1&gt;Название сайта&lt;/h1&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
+<body>
+    <div class="calculator">
+        <input type="number" id="quantity" placeholder="Количество" value="1">
 
-                &lt;nav class=&quot;main-nav&quot;&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ссылка 1&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ссылка 2&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ссылка 3&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/nav&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/header&gt;
+        <div id="serviceType">
+            <input type="radio" name="type" value="type1" id="type1" checked>
+            <label for="type1">Тип 1 (без доп. опций)</label>
+            <input type="radio" name="type" value="type2" id="type2">
+            <label for="type2">Тип 2 (с опцией)</label>
+            <input type="radio" name="type" value="type3" id="type3">
+            <label for="type3">Тип 3 (со свойством)</label>
+        </div>
 
-    &lt;main&gt;
-        &lt;div class=&quot;content-container&quot;&gt;
-            &lt;div class=&quot;table-wrapper&quot;&gt;
-                &lt;h2&gt;Таблица&lt;/h2&gt;  &lt;!-- Заголовок секции --&gt;
-                &lt;table class=&quot;data&quot;&gt; &lt;!-- Начало таблицы --&gt;
-                    &lt;thead&gt; &lt;!-- Заголовок таблицы --&gt;
-                        &lt;tr&gt; &lt;!-- Строка таблицы --&gt;
-                            &lt;th colspan=&quot;4&quot;&gt;Заголовок&lt;/th&gt; &lt;!-- Заголовочная ячейка на 4 столбца --&gt;
-                        &lt;/tr&gt;
-                    &lt;/thead&gt;
-                    &lt;tbody&gt; &lt;!-- Тело таблицы --&gt;
-                        &lt;tr&gt;
-                            &lt;td rowspan=&quot;2&quot;&gt;Объединённая ячейка&lt;/td&gt;
-                            &lt;td&gt;Ячейка 11&lt;/td&gt;
-                            &lt;td&gt;Ячейка 12&lt;/td&gt;
-                            &lt;td&gt;Ячейка 13&lt;/td&gt;
-                        &lt;/tr&gt;
-                        &lt;tr&gt;
-                            &lt;td&gt;Ячейка 21&lt;/td&gt;
-                            &lt;td&gt;Ячейка 22&lt;/td&gt;
-                            &lt;td&gt;Ячейка 23&lt;/td&gt;
-                        &lt;/tr&gt;
-                        &lt;tr&gt;
-                            &lt;td&gt;Ячейка 31&lt;/td&gt;
-                            &lt;td colspan=&quot;2&quot;&gt;Объединённая по горизонтали&lt;/td&gt;
-                            &lt;td&gt;Ячейка 34&lt;/td&gt;
-                        &lt;/tr&gt;
-                    &lt;/tbody&gt;
-                 &lt;/table&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;links-wrapper&quot;&gt;
-                &lt;h2&gt;Список гиперссылок:&lt;/h2&gt; &lt;!-- Заголовок второго уровня --&gt;
-                &lt;li&gt; &lt;a href=&quot;https://kubsu.ru/&quot; &gt; 1 &lt;/a&gt; &lt;/li&gt; &lt;!-- Пункт списка с ссылкой на сайт --&gt;
-                &lt;li&gt; &lt;a href=&quot;https://kubsu.ru/&quot;&gt; 2 &lt;/a&gt; &lt;/li&gt; &lt;!-- Аналогично предыдущему --&gt;
-                &lt;li&gt; &lt;a href=&quot;https://kubsu.ru/&quot; &gt; &lt;img src=&quot;https://static.kino.1tv.ru/cdn/3291/background.jpg&quot; alt=&quot;3&quot;&gt;  &lt;/a&gt;&lt;/li&gt; &lt;!-- Ссылка с изображением внутри --&gt;
-                &lt;li&gt; &lt;a href=&quot;/about&quot;&gt; 4 &lt;/a&gt; &lt;/li&gt; &lt;!-- Ссылка на внутреннюю страницу --&gt;
-                &lt;li&gt;&lt;a href=&quot;/&quot;&gt;5 &lt;/a&gt;&lt;/li&gt; &lt;!-- Ссылка на главную страницу сайта --&gt;
-                &lt;li&gt;
-                  &lt;a href=&quot;#about&quot;&gt; 6.откуда&lt;/a&gt; &lt;!-- Якорная ссылка --&gt;
-                  &lt;p id=&quot;about&quot;&gt; 6.куда&lt;/p&gt; &lt;!-- Якорный элемент --&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a href=&quot;https://kubsu.ru/?a=b&amp;c=d&amp;e=f&quot;&gt;7&lt;/a&gt;&lt;/li&gt; &lt;!-- Ссылка с GET-параметрами --&gt;
-                &lt;li&gt;&lt;a href=&quot;https://kubsu.ru/?id=g&quot;&gt;8&lt;/a&gt;&lt;/li&gt; &lt;!-- Ссылка с одним GET-параметром --&gt;
-                &lt;li&gt; &lt;a href=&quot;about.html&quot;&gt; 9 &lt;/a&gt; &lt;/li&gt; &lt;!-- Ссылка на файл в текущей директории --&gt;
-                &lt;li&gt; &lt;a href=&quot;/about.html&quot;&gt; 10 &lt;/a&gt; &lt;/li&gt; &lt;!-- Ссылка на файл из корня сайта --&gt;
-                &lt;li&gt; &lt;a href=&quot;../about.html&quot;&gt; 11 &lt;/a&gt; &lt;/li&gt; &lt;!-- Ссылка на файл в родительской директории --&gt;
-                &lt;li&gt; &lt;a href=&quot;../../about.html&quot;&gt; 12 &lt;/a&gt; &lt;/li&gt; &lt;!-- Ссылка на файл через две директории вверх --&gt;
-                &lt;li&gt; Это &lt;a href=&quot;about.html&quot;&gt; 13 &lt;/a&gt;&lt;/li&gt; &lt;!-- Текст с вложенной ссылкой --&gt;
-                &lt;li&gt;&lt;a href=&quot;https://example.com#x&quot;&gt;14&lt;/a&gt;&lt;/li&gt; &lt;!-- Внешняя ссылка с якорем --&gt;
-                &lt;li&gt;
-                  &lt;img src=&quot;https://i.pinimg.com/474x/b6/a2/fa/b6a2faaad435ad7bdc52abe8353500a1.jpg?nii=t&quot; usemap=&quot;#map&quot; alt=&quot;15&quot;&gt; &lt;!-- Изображение с картой областей --&gt;
-                  &lt;map name=&quot;map&quot;&gt; &lt;!-- Карта областей для изображения --&gt;
-                      &lt;area shape=&quot;rect&quot; coords=&quot;0,0,15,15&quot; href=&quot;a.html&quot; alt=&quot;15.1&quot;&gt;  &lt;!-- Прямоугольная кликабельная область, где(x1;y1),(x2;y2), т.е. координаты левого верхнего и правого нижнего, задаются в пикселях --&gt;
-                      &lt;area shape=&quot;circle&quot; coords=&quot;100,100,33&quot; href=&quot;b.html&quot; alt=&quot;15.2&quot; &gt; &lt;!-- Круглая кликабельная область --&gt;
-                  &lt;/map&gt;
-                &lt;/li&gt;
-                &lt;li&gt;&lt;a href=&quot;&quot;&gt; 16&lt;/a&gt;&lt;/li&gt; &lt;!-- Пустая ссылка (может использоваться для JavaScript) --&gt;
-                &lt;li&gt;&lt;a&gt;17&lt;/a&gt;&lt;/li&gt; &lt;!-- Ссылка без href (неактивная) --&gt;
-                &lt;li&gt;&lt;a href=&quot;https://kubsu.ru&quot; rel=&quot;nofollow&quot;&gt; 18 &lt;/a&gt;&lt;/li&gt; &lt;!-- Ссылка с указанием не передавать вес страницы --&gt;
-                &lt;li&gt;&lt;a href=&quot;https://kubsu.ru&quot; rel=&quot;noindex&quot;&gt; 19 &lt;/a&gt;&lt;/li&gt; &lt;!-- Ссылка с указанием не индексировать --&gt;
-                &lt;li&gt;&lt;a href=&quot;ftp://xyz:1234@ftp.example.com/about.html&quot;&gt;21&lt;/a&gt; &lt;!-- FTP-ссылка с авторизацией --&gt;
-                &lt;/ul&gt;
-                &lt;ol class=&quot;links&quot;&gt; &lt;!-- Упорядоченный (нумерованный) список --&gt;
-                &lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;a&quot;&gt;20/1&lt;/a&gt;&lt;/li&gt; &lt;!-- Нумерованный пункт со ссылкой и всплывающей подсказкой --&gt;
-                &lt;li&gt;&lt;a href=&quot;#&quot; title=&quot;b&quot;&gt;20/2&lt;/a&gt;&lt;/li&gt; &lt;!-- Аналогично предыдущему --&gt;
-                &lt;/ol&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;form-wrapper&quot;&gt;
-                &lt;h2&gt;Форма:&lt;/h2&gt;
-                &lt;form action=&quot;/submit&quot; method=&quot;post&quot;&gt;
-                &lt;div class=&quot;cla&quot;&gt;
-                    &lt;label for=&quot;1.1&quot;&gt;ФИО&lt;/label&gt;
-                    &lt;input type=&quot;text&quot; id=&quot;1.1&quot; name=&quot;1.1&quot; required&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;cla&quot;&gt;
-                    &lt;label for=&quot;2&quot;&gt;Телефон&lt;/label&gt;
-                    &lt;input type=&quot;tel&quot; id=&quot;2&quot; name=&quot;2&quot; pattern=&quot;[0-9]{3}-[0-9]{3}-[0-9]{3}&quot; placeholder=&quot;000-000-000&quot; required&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;cla&quot;&gt;
-                    &lt;label for=&quot;3&quot;&gt;e-mail&lt;/label&gt;
-                    &lt;input type=&quot;email&quot; id=&quot;3&quot; name=&quot;3&quot; required&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;cla&quot;&gt;
-                    &lt;label for=&quot;4&quot;&gt;дата рождения:&lt;/label&gt;
-                    &lt;input type=&quot;date&quot; id=&quot;4&quot; name=&quot;4&quot; required&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;cla&quot;&gt;
-                    &lt;label&gt;пол&lt;/label&gt;
-                    &lt;div&gt;
-                        &lt;input type=&quot;radio&quot; id=&quot;5.1&quot; name=&quot;5.2&quot; value=&quot;5.1&quot; required&gt;
-                        &lt;label for=&quot;5.1&quot;&gt;Муж&lt;/label&gt;
-                    &lt;/div&gt;
-                    &lt;div&gt;
-                        &lt;input type=&quot;radio&quot; id=&quot;5.3&quot; name=&quot;5.2&quot; value=&quot;5.3&quot;&gt;
-                        &lt;label for=&quot;5.3&quot;&gt;Жен&lt;/label&gt;
-                    &lt;/div&gt;
-                    &lt;div&gt;
-                        &lt;input type=&quot;radio&quot; id=&quot;5.4&quot; name=&quot;5.2&quot; value=&quot;5.4&quot;&gt;
-                        &lt;label for=&quot;5.4&quot;&gt;Не указан&lt;/label&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;cla&quot;&gt;
-                    &lt;label&gt;любимый язык программирования&lt;/label&gt;
-                    &lt;select name=&quot;programming_languages[]&quot; multiple size=&quot;3&quot;&gt;
-                        &lt;option value=&quot;Pascal&quot;&gt;Pascal&lt;/option&gt;
-                        &lt;option value=&quot;C&quot;&gt;C&lt;/option&gt;
-                        &lt;option value=&quot;Cpp&quot;&gt;C++&lt;/option&gt;
-                        &lt;option value=&quot;JavaScript&quot;&gt;JavaScript&lt;/option&gt;
-                        &lt;option value=&quot;PHP&quot;&gt;PHP&lt;/option&gt;
-                        &lt;option value=&quot;Python&quot;&gt;Python&lt;/option&gt;
-                        &lt;option value=&quot;Java&quot;&gt;Java&lt;/option&gt;
-                        &lt;option value=&quot;Haskell&quot;&gt;Haskell&lt;/option&gt;
-                        &lt;option value=&quot;Clojure&quot;&gt;Clojure&lt;/option&gt;
-                        &lt;option value=&quot;Prolog&quot;&gt;Prolog&lt;/option&gt;
-                        &lt;option value=&quot;Scala&quot;&gt;Scala&lt;/option&gt;
-                    &lt;/select&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;cla&quot;&gt;
-                    &lt;label for=&quot;bio&quot;&gt;биография&lt;/label&gt;
-                    &lt;textarea id=&quot;bio&quot; name=&quot;7&quot; rows=&quot;3&quot; cols=&quot;3&quot;&gt;&lt;/textarea&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;cla&quot;&gt;
-                    &lt;input type=&quot;checkbox&quot; id=&quot;8&quot; name=&quot;8&quot; required&gt;
-                    &lt;label for=&quot;8&quot;&gt;с контрактом ознакомлен(а)&lt;/label&gt;
-                &lt;/div&gt;
-                    &lt;button type=&quot;submit&quot;&gt;кнопка «Сохранить»&lt;/button&gt;
-                &lt;/form&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/main&gt;
+        <div id="options"></div> <!-- Для опций (селект) -->
+        <div id="properties"></div> <!-- Для свойств (чекбоксы) -->
 
-    &lt;footer&gt;
-        &lt;div class=&quot;footer-container&quot;&gt;
-            &lt;p&gt;&amp;copy; Имя Фамилия&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+        <div id="result">Стоимость: 0 руб.</div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
