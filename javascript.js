@@ -36,7 +36,7 @@ function updateForm() {
     } else if (selectedType === 'type2') {
         optionsDiv.innerHTML = `
             <div>
-                ${optionsType2.map((option, index) => `  // Генерируем радиокнопки для опций
+                ${optionsType2.map((option, index) => `     // Генерируем радиокнопки для опций
                     <label>
                         <input type="radio" name="optionType2" value="${option.name}" onchange="calculateCost()"> ${option.name} (+${option.price} руб.) // Показываем название и цену опции
                     </label>
