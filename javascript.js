@@ -1,4 +1,3 @@
-// Инициализация элементов
 const quantityInput = document.getElementById('quantity');
 const typeRadios = document.querySelectorAll('input[name="type"]');
 const optionsDiv = document.getElementById('options');
@@ -23,24 +22,34 @@ const propertiesType3 = [
     { name: 'Свойство 2', price: 45 }
 ];
 
+// проверка на отрицат +Кол-во товара
+function parseQuantity() {
+    const value = Number(quantityInput.value);
+    if (isNaN(value) || value <= 0) {
+        resultDiv.classList.add('error'); // Добавляем класс для стилизации
+        resultDiv.textContent = 'Ошибка: введите положительное число';
+        return 1; // мин 1
+    }
+    resultDiv.classList.remove('error'); // Убираем класс ошибки при корректном вводе
+    return value;
+}
 function getSelectedType() {
     const checked = document.querySelector('input[name="type"]:checked'); // Находим выбранную радио-кнопку
     return checked ? checked.value : null;  //Возвращаем значение или null
 }
-//Кол-во товара
-function parseQuantity() {
-    const value = Number(quantityInput.value);
-    return value > 0 ? value : 1; // Минимум 1
-}
+
 function hideProperties() {
     propertiesSelect.style.display = 'none';
     propertiesSelect.innerHTML = '';
 }
-
 // Расчёт стоимости
 function calculateCost() {
     const quantity = parseQuantity();
     const selectedType = getSelectedType();
+
+    if (resultDiv.classList.contains('error')) {
+        return;
+    }
 
     if (!selectedType) return;
 
